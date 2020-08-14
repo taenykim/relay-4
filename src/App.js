@@ -1,26 +1,30 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import logo from "./logo.svg";
+import { useEffect, useState } from "react";
+import "./App.css";
+import { drawImage, drawData } from "./utils/utils";
 
-function App() {
+const App = () => {
+  const [image, setImage] = useState(null);
+
+  useEffect(() => {
+    if (image) {
+      const canvas = document.getElementById("canvas");
+      drawImage(canvas);
+      drawData(canvas);
+    }
+  }, [image]);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <input
+        type="file"
+        onChange={() => {
+          setImage("22");
+        }}
+      ></input>
+      {image ? <canvas id="canvas"></canvas> : <img></img>}
     </div>
   );
-}
+};
 
 export default App;

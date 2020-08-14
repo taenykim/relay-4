@@ -18,16 +18,19 @@ const dummy = {
   ],
 };
 
-module.exports = dummy;
-
 const dummy2 = [
   {
-    info: { size: { width: 860, height: 642 }, faceCount: 4 },
-    faces: [
-      { celebrity: { value: "유재석", confidence: 1.0 } },
-      { celebrity: { value: "윤종신", confidence: 0.59828 } },
-      { celebrity: { value: "정채연", confidence: 0.109117 } },
-      { celebrity: { value: "소유", confidence: 0.211539 } },
-    ],
+    x: 20,
+    y: 20,
+    width: 60,
+    height: 60,
+  },
+  {
+    x: 120,
+    y: 120,
+    width: 60,
+    height: 60,
   },
 ];
+
+export default dummy2;
